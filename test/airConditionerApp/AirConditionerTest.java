@@ -14,54 +14,54 @@ public class AirConditionerTest {
 
     @BeforeEach
     public void setUp() {
-        this.myAC = new AirConditioner();
+        myAC = new AirConditioner();
     }
 
     @Test
     public void turnOnAC_acTurnedOnTest() {
-        this.myAC.turnOn();
+        myAC.turnOn();
 
-        assert this.myAC.isOn();
+        assert myAC.isOn();
 
     }
 
     @Test
     public void turnOffAC_acTurnedOffTest() {
-        this.myAC.turnOn();
-        this.myAC.turnOff();
-        assertFalse(this.myAC.isOn());
+        myAC.turnOn();
+        myAC.turnOff();
+        assertFalse(myAC.isOn());
     }
 
     @Test
     public void increaseTemperatureAt16_TemperatureIncreasedTo17Test() {
-        this.myAC.turnOn();
-        this.myAC.increaseTemperature();
-        assertEquals(17, this.myAC.getTemperature());
+        myAC.turnOn();
+        myAC.increaseTemperature();
+        assertEquals(17, myAC.getTemperature());
     }
 
     @Test
     public void decreaseTemperatureAt17_TemperatureDecreasedTo16Test() {
-        this.myAC.turnOn();
-        this.myAC.increaseTemperature();
-        this.myAC.decreaseTemperature();
-        assertEquals(16, this.myAC.getTemperature());
+        myAC.turnOn();
+        myAC.increaseTemperature();
+        myAC.decreaseTemperature();
+        assertEquals(16, myAC.getTemperature());
     }
 
     @Test
     public void increaseTemperatureBeyond30_TemperatureRemain30Test() {
-        this.myAC.turnOn();
+        myAC.turnOn();
 
         for(int count = 16; count <= 30; ++count) {
-            this.myAC.increaseTemperature();
+            myAC.increaseTemperature();
         }
 
-        assertEquals(30, this.myAC.getTemperature());
+        assertEquals(30, myAC.getTemperature());
     }
 
     @Test
     public void decreaseTemperatureBelow16_TemperatureRemain16Test() {
-        this.myAC.turnOn();
-        this.myAC.decreaseTemperature();
-        assertEquals(16, this.myAC.getTemperature());
+        myAC.turnOn();
+        myAC.decreaseTemperature();
+        assertEquals(16, myAC.getTemperature());
     }
 }

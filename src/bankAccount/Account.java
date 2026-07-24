@@ -12,61 +12,61 @@ public class Account {
 
     public void deposit(int amount) {
         if (amount > 0) {
-            this.balance += amount;
+            balance += amount;
         }
 
     }
 
     public void withdraw(int amount) {
-        if (amount > 0 && amount <= this.balance) {
-            this.balance -= amount;
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
         }
 
     }
 
     public int getBalance() {
-        return this.balance;
+        return balance;
     }
 
     public void signUp(String username, String password) {
-        if (!this.signedUp) {
+        if (!signedUp) {
             if (!username.isEmpty() && !password.isEmpty()) {
                 this.username = username;
                 this.password = password;
-                this.signedUp = true;
+                signedUp = true;
             }
         }
     }
 
     public boolean isSignedUp() {
-        return this.signedUp;
+        return signedUp;
     }
 
     public String getUsername() {
-        return this.username;
+        return username;
     }
 
     public void signIn(String username, String password) {
-        if (this.signedUp) {
+        if (signedUp) {
             if (this.username.equals(username) && this.password.equals(password)) {
-                this.signedIn = true;
+                signedIn = true;
             }
 
         }
     }
 
     public void signOut() {
-        this.signedIn = false;
+        signedIn = false;
     }
 
     public boolean isSignedIn() {
-        return this.signedIn;
+        return signedIn;
     }
 
     public void withdraw(int amount, String pin) {
-        if (this.signedIn && this.password.equals(pin)) {
-            if (amount > 0 && amount <= this.balance) {
-                this.balance -= amount;
+        if (signedIn && password.equals(pin)) {
+            if (amount > 0 && amount <= balance) {
+                balance -= amount;
             }
 
         } else {
@@ -75,8 +75,8 @@ public class Account {
     }
 
     public int getBalance(String pin) {
-        if (this.signedIn && this.password.equals(pin)) {
-            return this.balance;
+        if (signedIn && password.equals(pin)) {
+            return balance;
         } else {
             throw new IllegalArgumentException("Wrong PIN or not signed in");
         }

@@ -8,32 +8,32 @@ public class AirConditioner {
     }
 
     public void turnOn() {
-        this.isOn = true;
+        isOn = true;
     }
 
     public void turnOff() {
-        this.isOn = false;
+        isOn = false;
     }
 
     public boolean isOn() {
-        return this.isOn;
+        return isOn;
     }
 
     public void increaseTemperature() {
-        if (this.temperature < 30) {
-            ++this.temperature;
+        if (temperature < 30) {
+            ++temperature;
         }
 
     }
 
     public void decreaseTemperature() {
-        if (this.temperature > 16) {
-            --this.temperature;
+        if (temperature > 16) {
+            --temperature;
         }
 
     }
 
     public int getTemperature() {
-        return this.temperature;
+        return temperature;
     }
 }
